@@ -1,0 +1,4 @@
+{"level":"error","time":"2021/12/16 - 22:42:03.793","caller":"D:/programming/golang/src/github.com/web/mian.go:12","message":"连接成功"}
+{"level":"error","time":"2021/12/16 - 22:42:24.381","caller":"D:/programming/golang/src/github.com/web/mian.go:12","message":"连接成功"}
+{"level":"error","time":"2021/12/16 - 22:44:47.186","caller":"D:/programming/golang/src/github.com/web/mian.go:12","message":"连接成功"}
+{"level":"error","time":"2021/12/16 - 22:46:14.209","caller":"D:/programming/golang/src/github.com/web/mian.go:12","message":"连接成功"}
