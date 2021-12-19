@@ -4,13 +4,31 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"time"
+	"web/global"
 )
 
-func InitMysql() {
+type InitDBService struct{}
 
-	dsn := "root:q1w2E#R@(192.168.25.105:3306)/gorm_demo?charset=utf8mb4&parseTime=True&loc=Local"
+type InitDB struct {
+	Host     string `json:"host"`                        // 服务器地址
+	Port     string `json:"port"`                        // 数据库连接端口
+	UserName string `json:"userName" binding:"required"` // 数据库用户名
+	Password string `json:"password"`                    // 数据库密码
+	DBName   string `json:"dbName" binding:"required"`   // 数据库名
+}
+
+func Dsn() string {
+	//var configs string
+	config := global.GlobalConf.Mysqldb.Username + ":" + global.GlobalConf.Mysqldb.Password +
+		"@tcp(" + global.GlobalConf.Mysqldb.Host + ":" + global.GlobalConf.Mysqldb.Port + ")/" +
+		global.GlobalConf.Mysqldb.Database + "?" + global.GlobalConf.Mysqldb.Conf
+	return config
+}
+
+func ConfMysql() {
+
 	db, err := gorm.Open(mysql.New(mysql.Config{
-		DSN:                       dsn,
+		DSN:                       Dsn(),
 		DefaultStringSize:         256,  // string 类型字段的默认长度
 		DisableDatetimePrecision:  true, // 禁用 datetime 精度，MySQL 5.6 之前的数据库不支持
 		DontSupportRenameIndex:    true, // 重命名索引时采用删除并新建的方式，MySQL 5.7 之前的数据库和 MariaDB 不支持重命名索引
@@ -21,7 +39,6 @@ func InitMysql() {
 		panic(err)
 	}
 
-	//logger.Info(ctx1,"连接成功","323423423")
 	// 延迟关闭数据库连接
 
 	sqlDB, err := db.DB()
@@ -35,4 +52,5 @@ func InitMysql() {
 	// SetConnMaxLifetime 设置了连接可复用的最大时间
 	sqlDB.SetConnMaxLifetime(time.Hour)
 
+	defer sqlDB.Close()
 }

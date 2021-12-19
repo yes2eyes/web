@@ -1,0 +1,13 @@
+service:
+  servicename: web
+  port: 8083
+  env: "release"
+mysql:
+  host: "192.168.25.105"
+  port: "3306"
+  username: "root"
+  password: "q1w2E#R"
+  database: "gorm_demo"
+  conf: "charset=utf8mb4&parseTime=True&loc=Local"
+tmp:
+  abc: "2331"

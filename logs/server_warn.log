@@ -6,3 +6,10 @@
 {"level":"warn","time":"2021/12/16 - 22:56:00.542","caller":"D:/programming/golang/src/github.com/web/mian.go:14","message":"连接成功"}
 {"level":"warn","time":"2021/12/16 - 22:58:29.988","caller":"D:/programming/golang/src/github.com/web/mian.go:14","message":"连接成功"}
 {"level":"warn","time":"2021/12/16 - 23:00:37.686","caller":"D:/programming/golang/src/github.com/web/mian.go:14","message":"连接成功"}
+{"level":"warn","time":"2021/12/18 - 23:31:30.296","caller":"D:/programming/golang/src/github.com/web/mian.go:14","message":"连接成功"}
+{"level":"warn","time":"2021/12/19 - 00:10:48.772","caller":"D:/programming/golang/src/github.com/web/mian.go:14","message":"连接成功"}
+{"level":"warn","time":"2021/12/19 - 00:11:07.273","caller":"D:/programming/golang/src/github.com/web/mian.go:15","message":"连接成功"}
+{"level":"warn","time":"2021/12/19 - 00:15:27.949","caller":"D:/programming/golang/src/github.com/web/mian.go:15","message":"连接成功"}
+{"level":"warn","time":"2021/12/19 - 00:16:00.606","caller":"D:/programming/golang/src/github.com/web/mian.go:15","message":"连接成功"}
+{"level":"warn","time":"2021/12/19 - 00:16:35.362","caller":"D:/programming/golang/src/github.com/web/mian.go:15","message":"连接成功"}
+{"level":"warn","time":"2021/12/19 - 00:18:31.606","caller":"D:/programming/golang/src/github.com/web/mian.go:15","message":"连接成功"}

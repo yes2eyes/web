@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"web/global"
 	"web/route"
 	"web/utils"
@@ -8,11 +9,17 @@ import (
 
 // 程序入口
 func main() {
-	utils.InitMysql()
+	utils.InitViper()
+	utils.ConfMysql()
+
 	global.GlobalLog = utils.Zap()
-	global.GlobalLog.Debug("连接成功")
-	global.GlobalLog.Warn("连接成功")
-	global.GlobalLog.Info("dsdsdsd")
-	//global.GlobalLog.Info("连接成功")
+	aaa := utils.Dsn()
+	fmt.Println("aaa", aaa)
+
+	conf := global.GlobalConf.Mysqldb.Conf
+	fmt.Println("conf", conf)
+	fmt.Println("username", global.GlobalConf.Tmp.Abc)
+	fmt.Println("env:", global.GlobalConf.Service.Port)
+
 	route.Route()
 }

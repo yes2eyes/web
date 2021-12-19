@@ -22,7 +22,7 @@ func PathExists(path string) (bool, error) {
 
 func Zap() (logger *zap.Logger) {
 	if ok, _ := PathExists("log"); !ok { // 判断是否有Director文件夹
-		fmt.Printf("create %v directory\n", "logs")
+		//fmt.Printf("create %v directory\n", "logs")
 		_ = os.Mkdir("logs", os.ModePerm)
 	}
 	// 调试级别
